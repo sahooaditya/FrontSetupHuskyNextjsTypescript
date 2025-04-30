@@ -1,0 +1,47 @@
+@import '/styles/components/variable';
+
+.container {
+    @media screen and (max-width: $mobileResolution) {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .sendVerification {
+        position: relative;
+        margin-bottom: -40px;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(25, 23, 23, 0.59);
+        padding: 12px 0;
+        color: #fff;
+        font-size: 11px;
+        z-index: 10;
+        @media screen and (max-width: $mobileResolution) {
+            margin-bottom: 0rem;
+        }
+
+        span {
+            color: $brandColor;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .donateBtn {
+        font-size: 14px;
+        color: #fff;
+        background-color: $brandColor;
+        padding: 0.6rem 1rem;
+        text-align: center;
+        width: 100%;
+        display: block;
+        letter-spacing: 6px;
+    }
+
+    .content {
+        min-height: 200px;
+    }
+}

@@ -1,8 +1,27 @@
-import type { NextConfig } from "next";
+const withTM = require('next-transpile-modules')([
+  'antd',
+  'rc-util',
+  'rc-pagination',
+  'rc-picker',         // <-- new
+  'rc-select',         // Antd Select depends on this
+  'rc-dialog',         // Modal/Dialog support
+  'rc-field-form',     // Form support
+  'rc-input-number',   // InputNumber support
+]);
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
+  transpilePackages: [
+    'antd',
+    'rc-util',
+    'rc-pagination',
+    'rc-picker',
+    'rc-select',
+    'rc-dialog',
+    'rc-field-form',
+    'rc-input-number',
+  ],
 };
 
-export default nextConfig;
+module.exports = withTM(nextConfig);

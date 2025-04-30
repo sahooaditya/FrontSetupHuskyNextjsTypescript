@@ -1,0 +1,29 @@
+$primary: #20c7b7;
+$colorRed: #e9431b;
+$brandColor: #ffaf00;
+$colorDarkBlack: #191717;
+$colorDanger: #f66e6a;
+$brownishGrey: #5d5d5d;
+$darkBlack: #191717;
+$colorWhite: #ffffff;
+
+$fontGlobal: 'Work Sans', sans-serif;
+$fontHeading: 'Barlow Condensed', sans-serif;
+$fontUbuntu: 'Ubuntu', serif;
+$fontUbuntuWeight: 400;
+$fontUbuntuStyle: normal;
+
+$fg: $fontGlobal;
+$fh: $fontHeading;
+
+$defaultBorderRadius: 10px;
+$defaultContentSpacing: 15px;
+
+// Screen Resolution
+$mobileResolution: 767px;
+$mobileResolution2: 768px;
+$tabResolution: 900px;
+$ipadProResolution: 1024px;
+$microMobileResolution: 360px;
+
+@import './mixins';
