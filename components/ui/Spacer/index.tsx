@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface StateProps {
     sm?: string;
@@ -26,11 +26,11 @@ export default class Spacer extends React.Component<StateProps> {
 
     componentDidMount() {
         this.handleWindowResize();
-        window.addEventListener('resize', this.resize);
+        window.addEventListener("resize", this.resize);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.resize);
+        window.removeEventListener("resize", this.resize);
     }
 
     render() {

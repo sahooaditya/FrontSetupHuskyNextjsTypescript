@@ -7,9 +7,9 @@ $brownishGrey: #5d5d5d;
 $darkBlack: #191717;
 $colorWhite: #ffffff;
 
-$fontGlobal: 'Work Sans', sans-serif;
-$fontHeading: 'Barlow Condensed', sans-serif;
-$fontUbuntu: 'Ubuntu', serif;
+$fontGlobal: "Work Sans", sans-serif;
+$fontHeading: "Barlow Condensed", sans-serif;
+$fontUbuntu: "Ubuntu", serif;
 $fontUbuntuWeight: 400;
 $fontUbuntuStyle: normal;
 
@@ -26,4 +26,4 @@ $tabResolution: 900px;
 $ipadProResolution: 1024px;
 $microMobileResolution: 360px;
 
-@import './mixins';
+@import "./mixins";

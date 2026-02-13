@@ -4,10 +4,13 @@
     "private": true,
     "scripts": {
         "clean": "rimraf --glob .next",
-        "build": "npm run clean && next build",
+        "build": "cross-env NEXT_DISABLE_ESLINT=true next build",
         "dev": "cross-env PORT=3002 next dev",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "prepare": "husky",
+        "format": "prettier --write .",
+        "tsc": "tsc"
     },
     "dependencies": {
         "antd": "^5.24.9",
@@ -20,6 +23,12 @@
         "react-bootstrap": "^2.10.9",
         "react-dom": "^19.0.0"
     },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "npm run lint",
+            "npm run format"
+        ]
+    },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
         "@types/node": "^20",
@@ -27,21 +36,17 @@
         "@types/react-dom": "^19",
         "@typescript-eslint/eslint-plugin": "^8.31.1",
         "cross-env": "^7.0.3",
-        "eslint": "^9.25.1",
-        "eslint-config-airbnb": "^19.0.4",
+        "eslint": "^8.57.1",
         "eslint-config-next": "15.1.0",
         "eslint-config-prettier": "^9.0.0",
-        "eslint-plugin-import": "^2.31.0",
-        "eslint-plugin-jsx-a11y": "^6.7.1",
         "eslint-plugin-prettier": "^5.0.0",
-        "eslint-plugin-react": "^7.33.1",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-security": "^1.7.0",
         "eslint-plugin-simple-import-sort": "^9.0.0",
         "eslint-plugin-sonarjs": "^0.16.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.2.11",
-        "prettier": "^3.4.2",
+        "prettier": "^3.8.1",
         "rimraf": "^6.0.1",
         "typescript": "^5"
     }

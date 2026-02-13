@@ -1,73 +1,68 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
+    root: true,
+
+    env: {
+        browser: true,
+        node: true,
+        es2020: true,
     },
-  },
 
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
+    parser: "@typescript-eslint/parser",
 
-  settings: {
-    react: {
-      version: "detect",
+    parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+        ecmaFeatures: {
+            jsx: true,
+        },
     },
-    "import/resolver": {
-      node: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"], // Here you specify extensions correctly.
-      },
+
+    settings: {
+        react: {
+            version: "detect",
+        },
+        "import/resolver": {
+            node: {
+                extensions: [".js", ".jsx", ".ts", ".tsx"],
+            },
+        },
     },
-  },
 
-  plugins: ["@typescript-eslint"],
-  extends: [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "prettier",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "plugin:sonarjs/recommended",
-    "plugin:security/recommended",
-    // "plugin:react-hooks/recommended",
-  ],
+    plugins: ["@typescript-eslint", "prettier", "sonarjs", "security"],
 
-  rules: {
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        extensions: [".ts", ".tsx", ".js", ".jsx"],
-      },
+    extends: [
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended",
+        "plugin:sonarjs/recommended",
+        "plugin:security/recommended",
+        "prettier",
     ],
-    "react/jsx-props-no-spreading": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never",
-      },
-    ],
-    "jsx-a11y/anchor-is-valid": [
-      "error",
-      {
-        components: ["Link"],
-        specialLink: ["hrefLeft", "hrefRight"],
-        aspects: ["invalidHref", "preferButton"],
-      },
-    ],
-    "no-nested-ternary": "off",
-    "import/prefer-default-export": "off",
-  },
+
+    rules: {
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            "warn",
+            { extensions: [".js", ".jsx", ".ts", ".tsx"] },
+        ],
+
+        "react/jsx-props-no-spreading": "off",
+        "import/prefer-default-export": "off",
+        "no-nested-ternary": "off",
+
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                components: ["Link"],
+                specialLink: ["hrefLeft", "hrefRight"],
+                aspects: ["invalidHref", "preferButton"],
+            },
+        ],
+    },
 };
